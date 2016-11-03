@@ -16,13 +16,18 @@ const $ = _$(window);
 
 chaiJquery(chai, chai.util, $);
 
-function renderComponent(ComponentClass, props = {}, state = {}) {
+// Returns a jQuery object!
+// Perfesser code:
+function renderComponent(ComponentClass, props, state) {
+// GitHub distributed code: WTF?
+// function renderComponent(ComponentClass, props = {}, state = {}) {
   const componentInstance =  TestUtils.renderIntoDocument(
     <Provider store={createStore(reducers, state)}>
       <ComponentClass {...props} />
     </Provider>
   );
 
+  // Returns a jQuery object!
   return $(ReactDOM.findDOMNode(componentInstance));
 }
 
