@@ -10,6 +10,9 @@ describe('CommentList', () => {
 
   beforeEach( () => {
     const props = { comments: [ 'Comment da foist', 'Remarks upon remarks', 'yadda' ] };
+    // We pass our just-made PROPS (for testing) in to our helper renderComponent
+    // I guess this one (LIST) does not need app-level state ... ?
+    // I think in the real component (not this testing bit), we get the Props FROM state (mapStateToProps), fwiw. But here, we are not passing IN state. all right.
     component = renderComponent(CommentList, null, props);
   });
 
